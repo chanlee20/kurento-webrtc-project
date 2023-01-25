@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/kurento.png" type="image/png" />
+    <script src="/socket.io/socket.io.js"></script>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/demo-console/index.css">
+    <link rel="stylesheet" href="bower_components/ekko-lightbox/dist/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="css/kurento.css">
+
+    <script src="bower_components/webrtc-adapter/release/adapter.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/demo-console/index.js"></script>
+    <script src="bower_components/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+
+    <script src="bower_components/kurento-utils/js/kurento-utils.js"></script>
+
+    <script src="js/index.js"></script>
+    <title>1 to N Call</title>
+  </head>
+  <body>
+
+    <header>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+            <a class="navbar-brand" href=".">Dogu's Webrtc</a>
+          </div>
+          <div class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="https://github.com/Kurento/kurento-tutorial-node/tree/master/kurento-one2many-call">
+                  <span class="glyphicon glyphicon-file"></span> Source Code</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="page-header">
+        <h1>Presenter Mode</h1>
+        <p id = 'current_room'></p>
+        <p> All Rooms: </p>
+        <div id = 'all_rooms'></div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- <a id = "createRoom" href="#" class = "btn btn-success">
+                <span class = "glyphicon glyphicon-play"></span> Create Room
+              </a> -->
+              <a id="call" href="#" class="btn btn-success">
+                <span class="glyphicon glyphicon-play"></span> Presenter</a>
+              <a id="play" href="#" class="btn btn-primary">
+                <span class="glyphicon glyphicon-user"></span> play</a>
+              <a id="terminate" href="#" class="btn btn-danger">
+                <span class="glyphicon glyphicon-stop"></span> Stop</a>
+            </div>
+          </div>
+          <br/>
+          <label class="control-label" for="console">Console</label><br><br>
+          <div id="console" class="democonsole">
+            <ul></ul>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div id="videoBig">
+            <video id="video" autoplay width="854px" height="480px" poster="img/webrtc.png"></video>
+            <video id="videoOutput" autoplay width="854px" height="480px" poster="img/webrtc.png"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
